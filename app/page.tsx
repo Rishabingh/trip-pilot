@@ -1,8 +1,12 @@
 import Image from "next/image";
+import Hero from "@/components/Hero";
+import Stats from "@/components/Stats";
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full bg-linear-to-br from-red-100 via-purple-100 to-blue-100">
+    <div className="">
+      <Hero />
+      <Stats />
     </div>
   );
 }

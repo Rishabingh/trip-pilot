@@ -19,7 +19,12 @@ const Navbar = () => {
       
       <div className="flex gap-6 items-center">
         <Link href={'/login'}>Sign In</Link>
-        <Link href={'/planner'} className="bg-linear-to-r from-blue-600 to-purple-600 text-neutral-100 px-1 py-1.5 text-sm rounded-lg">Start Planning</Link>
+        <Link
+          href="/planner"
+          className="bg-linear-to-r from-blue-600 to-purple-600 text-white px-4 py-2 text-sm rounded-lg"
+        >
+          Start Planning
+        </Link>
       </div>
     </nav>
   )
