@@ -11,10 +11,10 @@ const Navbar = () => {
         <span className="bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold text-lg">TripPilot</span>
       </div>
       <ul className="flex gap-10 text-neutral-500">
-        <li className="text-blue-700">Home</li>
-        <li>Features</li>
-        <li>Planner</li>
-        <li>About</li>
+        <li className="text-blue-700"><Link href={'/'}>Home</Link></li>
+        <li><Link href={'/features'}>Features</Link></li>
+        <li><Link href={'/planner'}>Planner</Link></li>
+        <li><Link href={'/about'}>About</Link></li>
       </ul>
       
       <div className="flex gap-6 items-center">
