@@ -2,10 +2,17 @@
 import { LuPlane } from "react-icons/lu";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Sidebar from "./Sidebar";
+import { IoMdMenu } from "react-icons/io";
+import { useState } from "react";
+import { RxCross1 } from "react-icons/rx";
+
 
 const Navbar = () => {
   const page = usePathname();
+  const [sideBarOpen, setSideBarOpen] = useState<boolean>(false)
   return (
+    <>
     <nav className="fixed top-0 left-0 right-0 h-17 items-center flex justify-between py-3 px-6 bg-white/60 backdrop-blur-lg shadow-2xs">
       <div className="flex items-center gap-2">
         <div className="bg-linear-to-r from-blue-600 to-purple-600 text-neutral-100 text-2xl p-1 rounded-lg">
@@ -13,14 +20,14 @@ const Navbar = () => {
         </div>
         <span className="bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold text-lg">TripPilot</span>
       </div>
-      <ul className="flex gap-10 text-neutral-500">
+      <ul className="md:flex hidden gap-10 text-neutral-500">
         <li className={`${page === '/' ? "text-blue-600" : ""}`}><Link href={'/'}>Home</Link></li>
         <li className={`${page === '/features' ? "text-blue-600" : ""}`}><Link href={'/features'}>Features</Link></li>
         <li className={`${page === '/planner' ? "text-blue-600" : ""}`}><Link href={'/planner'}>Planner</Link></li>
         <li className={`${page === '/about' ? "text-blue-600" : ""}`}><Link href={'/about'}>About</Link></li>
       </ul>
       
-      <div className="flex gap-6 items-center">
+      <div className="md:flex hidden gap-6 items-center">
         <Link href={'/login'}>Sign In</Link>
         <Link
           href="/planner"
@@ -29,7 +36,14 @@ const Navbar = () => {
           Start Planning
         </Link>
       </div>
+
+      <div className="md:hidden block" onClick={() => setSideBarOpen((prev) => !prev)}>
+        {sideBarOpen ? <RxCross1 size={24} /> : <IoMdMenu size={24} />}
+      </div>
     </nav>
+
+    <Sidebar className={`${sideBarOpen ? 'translate-x-0' : 'translate-x-full'} transform transition-transform duration-300 ease-in-out`} />
+    </>
   )
 }
 
