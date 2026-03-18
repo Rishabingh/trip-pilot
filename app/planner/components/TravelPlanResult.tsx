@@ -4,7 +4,7 @@ import remarkGfm from "remark-gfm";
 const TravelPlanResult = ({ markdown }: { markdown?: string }) => {
   if (!markdown) {
     return (
-      <div className="w-full max-w-4xl mx-auto mt-10 p-12 rounded-2xl bg-gray-50 border border-gray-200 text-center flex flex-col items-center justify-center gap-3">
+      <div className="w-full max-w-4xl mx-auto mt-10 p-12 rounded-2xl bg-gray-50/60 border border-gray-200 text-center flex flex-col items-center justify-center gap-3">
         <h3 className="text-xl font-semibold text-gray-800">No Itinerary Yet</h3>
         <p className="text-gray-500">
           Your generated travel plan will appear here. Let&apos;s plan your next trip!
@@ -14,14 +14,14 @@ const TravelPlanResult = ({ markdown }: { markdown?: string }) => {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto mt-12 mb-24 px-4 sm:px-0">
+    <div className="w-full max-w-4xl mx-2 md:mx-auto mt-12 mb-24 px-4 sm:px-0">
       
       <h2 className="text-3xl font-bold mb-8 text-gray-900">
         Your Travel Plan
       </h2>
 
       {/* Clean, minimalist card container */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-10">
+      <div className="bg-white/60 rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-10">
 
         <div
           className="

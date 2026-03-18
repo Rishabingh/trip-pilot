@@ -1,7 +1,10 @@
+"use client"
 import { LuPlane } from "react-icons/lu";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const page = usePathname();
   return (
     <nav className="fixed top-0 left-0 right-0 h-17 items-center flex justify-between py-3 px-6 bg-white/60 backdrop-blur-lg shadow-2xs">
       <div className="flex items-center gap-2">
@@ -11,10 +14,10 @@ const Navbar = () => {
         <span className="bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold text-lg">TripPilot</span>
       </div>
       <ul className="flex gap-10 text-neutral-500">
-        <li className="text-blue-700"><Link href={'/'}>Home</Link></li>
-        <li><Link href={'/features'}>Features</Link></li>
-        <li><Link href={'/planner'}>Planner</Link></li>
-        <li><Link href={'/about'}>About</Link></li>
+        <li className={`${page === '/' ? "text-blue-600" : ""}`}><Link href={'/'}>Home</Link></li>
+        <li className={`${page === '/features' ? "text-blue-600" : ""}`}><Link href={'/features'}>Features</Link></li>
+        <li className={`${page === '/planner' ? "text-blue-600" : ""}`}><Link href={'/planner'}>Planner</Link></li>
+        <li className={`${page === '/about' ? "text-blue-600" : ""}`}><Link href={'/about'}>About</Link></li>
       </ul>
       
       <div className="flex gap-6 items-center">

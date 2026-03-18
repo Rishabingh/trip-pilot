@@ -1,36 +1,22 @@
-import React from "react";
+"use client"
+import { useRef } from "react";
+import { useState } from "react";
 import TripDetailsForm from "./components/TripDetailsForm";
 import TravelPlanResult from "./components/TravelPlanResult";
 
-const page = () => {
+const Page = () => {
+  const [result, setResult] = useState<string>("")
+  const resultRef = useRef<HTMLDivElement | null>(null);
   return (
     <div>
-      <TripDetailsForm />
-      <div className="py-10">
+      <TripDetailsForm setResult={setResult} resultRef={resultRef}/>
+      <div className="py-10" ref={resultRef}>
         <TravelPlanResult
-          markdown={`# Paris Travel Plan 🇫🇷
-
-## Day 1
-- Visit **Eiffel Tower**
-- Walk along the **Seine River**
-- Dinner near *Montmartre*
-
-## Day 2
-- Louvre Museum
-- Notre Dame Cathedral
-- Evening cruise
-
-### Budget Breakdown
-| Item | Cost |
-|-----|-----|
-| Hotel | $800 |
-| Food | $300 |
-| Transport | $120 |
-        `}
+          markdown={result}
         />
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;
