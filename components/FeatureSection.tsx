@@ -8,8 +8,8 @@ import { GrSecure } from "react-icons/gr";
 
 const FeatureSection = () => {
   return (
-    <div className="w-full bg-neutral-50 py-22">
-      <div className="w-full flex flex-col gap-5 items-center justify-center">
+    <div className="w-full bg-neutral-50 md:py-22 py-10">
+      <div className="w-full flex flex-col gap-5 items-center justify-center px-4 md:px-0">
         <div className="font-bold text-4xl">
           Everything You Need to Plan the Perfect Trip
         </div>
@@ -19,7 +19,7 @@ const FeatureSection = () => {
         </div>
       </div>
 
-      <div className="w-[80%] mx-auto grid grid-cols-3 justify-items-center py-20 gap-10">
+      <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-3 justify-items-center py-10 md:py-20 md:gap-10 gap-4">
         <FeatureCard
           logo={GiStarFormation}
           title="AI-Powered Itineraries"

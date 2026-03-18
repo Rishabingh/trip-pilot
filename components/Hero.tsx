@@ -19,7 +19,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <div>
+      <div className="mt-6 md:mt-0 p-1 md:p-0">
         <Image
           src={'/travel.jpg'}
           width={512}
