@@ -7,7 +7,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 
 const page = () => {
   return (
-    <div>
+    <div className='py-10'>
       <FeatureHero />
       <div className='py-22 bg-white flex flex-col gap-20'>
         <FeatureDetailedCard
@@ -20,7 +20,7 @@ const page = () => {
         l3='Time optimization'
         />
         <FeatureDetailedCard
-        className='flex-row-reverse'
+        className='md:flex-row-reverse'
         logo={FaCalendarAlt}
         title='Intelligent Scheduling'
         description='Automatically organize your trip with optimal timing, considering opening hours, distances, and popular times to visit attractions.'

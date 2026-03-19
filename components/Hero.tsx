@@ -26,6 +26,7 @@ const Hero = () => {
           height={480}
           alt="travel destination image example"
           className="w-lg h-120 object-cover rounded-2xl"
+          priority
         />
       </div>
     </div>

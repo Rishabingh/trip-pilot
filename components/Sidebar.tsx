@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const Sidebar = ({ className }: { className: string }) => {
+const Sidebar = ({ className, handleLinkClick }: { className: string, handleLinkClick: () => void }) => {
   const page = usePathname();
 
   return (
     <aside
       className={`${className} fixed top-17 right-0 bottom-0 w-64 min-h-screen overflow-x-hidden bg-white/60 backdrop-blur-lg shadow-2xs
        flex flex-col p-6 z-30`}
+      onClick={handleLinkClick}
     >
       <ul className="flex flex-col gap-8 text-neutral-500 items-center">
         <li className={`${page === "/" ? "text-blue-600" : ""}`}>
