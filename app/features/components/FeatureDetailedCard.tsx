@@ -13,28 +13,31 @@ interface FeatureDetailedCardProps {
 
 const FeatureDetailedCard = ({className, logo: Logo, title, description, l1, l2, l3}: FeatureDetailedCardProps) => {
   return (
-    <div className={`flex md:flex-row flex-col gap-10 justify-center ${className}`}>
-      <div className="max-w-lg flex flex-col gap-3 px-4 md:px-0">
-        <div className="bg-linear-to-r from-blue-600 to-purple-600 text-neutral-100 text-2xl py-2 rounded-lg w-10 flex justify-center">
+    <div className={`flex flex-col lg:flex-row gap-10 lg:gap-16 items-center justify-between w-full ${className}`}>
+      
+      {/* Text Side */}
+      <div className="w-full lg:w-1/2 flex flex-col gap-5">
+        <div className="bg-linear-to-r from-blue-600 to-purple-600 text-neutral-100 text-2xl py-2 rounded-xl w-12 flex justify-center shadow-md">
           <Logo />
         </div>
-        <div className="text-3xl font-bold">{title}</div>
-        <div className="text-lg text-neutral-600">
+        <h3 className="text-3xl md:text-4xl font-bold text-gray-900">{title}</h3>
+        <p className="text-lg text-neutral-600 leading-relaxed">
          {description}
-        </div>
+        </p>
         <div className="mt-2">
-          <ul className="flex gap-3 flex-col text-neutral-700">
-            <li className="flex gap-2 items-center"><FaRegDotCircle className="text-green-500 shrink-0" /> {l1}</li>
-            <li className="flex gap-2 items-center"><FaRegDotCircle className="text-green-500 shrink-0" /> {l2}</li>
-            <li className="flex gap-2 items-center"><FaRegDotCircle className="text-green-500 shrink-0" /> {l3}</li>
+          <ul className="flex gap-4 flex-col text-neutral-700">
+            <li className="flex gap-3 items-center"><FaRegDotCircle className="text-green-500 shrink-0 text-lg" /> <span className="text-lg">{l1}</span></li>
+            <li className="flex gap-3 items-center"><FaRegDotCircle className="text-green-500 shrink-0 text-lg" /> <span className="text-lg">{l2}</span></li>
+            <li className="flex gap-3 items-center"><FaRegDotCircle className="text-green-500 shrink-0 text-lg" /> <span className="text-lg">{l3}</span></li>
           </ul>
         </div>
       </div>
       
-      {/* FIXED: Changed w-md to w-full max-w-md and added min-h-[200px] for mobile */}
-      <div className="w-full max-w-md min-h-62.5 rounded-xl bg-linear-to-r from-red-100 via-purple-100 to-blue-100 items-center justify-center shadow-md flex mx-auto md:mx-0">
-        <Logo className="text-6xl text-purple-500 opacity-80" />
+      {/* Graphic Side (Replaces the w-md fixed width) */}
+      <div className="w-full lg:w-1/2 min-h-[300px] md:min-h-[400px] rounded-3xl bg-linear-to-br from-blue-50 via-purple-50 to-red-50 flex items-center justify-center shadow-inner border border-neutral-100">
+        <Logo className="text-8xl md:text-[120px] text-purple-400 opacity-60 drop-shadow-lg" />
       </div>
+
     </div>
   );
 };

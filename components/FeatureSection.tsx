@@ -8,48 +8,29 @@ import { GrSecure } from "react-icons/gr";
 
 const FeatureSection = () => {
   return (
-    <div className="w-full bg-neutral-50 md:py-22 py-10">
-      <div className="w-full flex flex-col gap-5 items-center justify-center px-4 md:px-0">
-        <div className="font-bold text-4xl">
-          Everything You Need to Plan the Perfect Trip
+    <div className="w-full bg-neutral-50 py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        
+        {/* Header */}
+        <div className="flex flex-col gap-4 items-center text-center max-w-3xl mx-auto mb-12 md:mb-16">
+          <h2 className="font-bold text-3xl md:text-4xl text-gray-900">
+            Everything You Need to Plan the Perfect Trip
+          </h2>
+          <p className="text-neutral-600 text-lg">
+            Powerful features designed to make travel planning effortless and enjoyable.
+          </p>
         </div>
-        <div className="text-neutral-600">
-          Powerful features designed to make travel planning effortless and
-          enjoyable.
-        </div>
-      </div>
 
-      <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-3 justify-items-center py-10 md:py-20 md:gap-10 gap-4">
-        <FeatureCard
-          logo={GiStarFormation}
-          title="AI-Powered Itineraries"
-          description="Get personalized travel plans based on your preferences and budget."
-        />
-        <FeatureCard
-          logo={FaGlobeAsia}
-          title="Global Coverage"
-          description="Access information for destinations worldwide."
-        />
-        <FeatureCard
-          logo={MdMoneyOffCsred}
-          title="Free Access"
-          description="Free to Start and No credit card is required."
-        />
-        <FeatureCard
-          logo={FaLocationDot}
-          title="Smart Recommendations"
-          description="Discover hidden gems and popular attractions tailored to your interests."
-        />
-        <FeatureCard
-          logo={TbAdjustmentsCog}
-          title="Flexible Scheduling"
-          description="Easily adjust your plans."
-        />
-        <FeatureCard
-          logo={GrSecure}
-          title="Secure & Private"
-          description="Your travel data is encrypted and protected."
-        />
+        {/* Grid - Added sm:grid-cols-2 for tablets! */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center">
+          <FeatureCard logo={GiStarFormation} title="AI-Powered Itineraries" description="Get personalized travel plans based on your preferences and budget." />
+          <FeatureCard logo={FaGlobeAsia} title="Global Coverage" description="Access information for destinations worldwide." />
+          <FeatureCard logo={MdMoneyOffCsred} title="Free Access" description="Free to Start and No credit card is required." />
+          <FeatureCard logo={FaLocationDot} title="Smart Recommendations" description="Discover hidden gems and popular attractions tailored to your interests." />
+          <FeatureCard logo={TbAdjustmentsCog} title="Flexible Scheduling" description="Easily adjust your plans." />
+          <FeatureCard logo={GrSecure} title="Secure & Private" description="Your travel data is encrypted and protected." />
+        </div>
+        
       </div>
     </div>
   );
