@@ -7,7 +7,7 @@ import { IoMdMenu } from "react-icons/io";
 import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 
-const Navbar = () => {
+const Navbar = ({ loggedIn }: { loggedIn: boolean }) => {
   const page = usePathname();
   const [sideBarOpen, setSideBarOpen] = useState<boolean>(false);
 
@@ -42,7 +42,7 @@ const Navbar = () => {
         </ul>
 
         <div className="md:flex hidden gap-6 items-center">
-          <Link href={"/login"}>Sign In</Link>
+          {loggedIn ? '' : <Link href={"/login"}>Sign In</Link>}
           <Link
             href="/planner"
             className="bg-linear-to-r from-blue-600 to-purple-600 text-white px-4 py-2 text-sm rounded-lg"

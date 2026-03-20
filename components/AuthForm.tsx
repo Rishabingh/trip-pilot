@@ -2,7 +2,7 @@
 import { CiMail } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
 import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
+import SubmitButton from "./SubmitButton";
 
 type State = {
   error?: string;
@@ -11,23 +11,12 @@ type State = {
 
 interface formProps {
   type: "login" | "register";
-  action: (prevState: State | null, formData: FormData) => Promise<any>;
+  action: (prevState: State | null, formData: FormData) => Promise<State>;
 }
 
 const AuthForm = ({ type, action }: formProps) => {
   const [state, formAction] = useActionState(action, null);
-  const { pending } = useFormStatus();
 
-  const textMap = {
-    login: {
-      idle: "Login",
-      loading: "Logging in...",
-    },
-    register: {
-      idle: "Create Account",
-      loading: "Creating account...",
-    },
-  };
   return (
     <form
       className="bg-neutral-50 rounded-xl shadow-md p-4 flex flex-col gap-10 max-w-sm mx-auto text-sm"
@@ -80,9 +69,7 @@ const AuthForm = ({ type, action }: formProps) => {
         </div>
       </div>
 
-      <button className="bg-linear-to-r from-blue-600 to-purple-600 text-white py-2 rounded-md">
-        {pending ? textMap[type].loading : textMap[type].idle}
-      </button>
+      <SubmitButton type={type} />
       {state?.error && (
         <p className="text-red-500 flex justify-center">{state.error}</p>
       )}

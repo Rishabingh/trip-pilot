@@ -3,7 +3,13 @@ import AuthForm from "../../components/AuthForm";
 import { LuPlane } from "react-icons/lu";
 import Link from "next/link";
 import { loginAction } from "@/lib/actions";
-const page = () => {
+import getUser from "@/lib/getUser";
+import { redirect } from "next/navigation";
+const page = async () => {
+
+  const user = await getUser();
+  if(user) redirect('/planner')
+  
   return (
     <div className="md:py-22 py-10">
       <div className="flex flex-col items-center gap-3">

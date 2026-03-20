@@ -32,4 +32,8 @@ userSchema.methods.verifyPassword = async function(this: IUser, password: string
   return await bcrypt.compare(password, this.password)
 }
 
-export default mongoose.models.User || mongoose.model<IUser>('User', userSchema);
+const User =
+  mongoose.models.User ||
+  mongoose.model<IUser>("User", userSchema);
+
+export default User;
