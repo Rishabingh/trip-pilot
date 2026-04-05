@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FaLongArrowAltRight } from "react-icons/fa";
-
+import Link from "next/link";
 const Hero = () => {
   return (
     // Added container bounds: w-full max-w-7xl mx-auto
@@ -13,9 +13,11 @@ const Hero = () => {
           Create personalized itineraries with AI-powered recommendations. Save time, discover amazing places, and make every journey unforgettable.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          <button className="bg-linear-to-r from-blue-600 to-purple-600 text-white w-full sm:w-56 justify-center py-3.5 rounded-xl flex items-center gap-2 font-medium shadow-md hover:shadow-lg transition-all">
+          <Link className="bg-linear-to-r from-blue-600 to-purple-600 text-white w-full sm:w-56 justify-center py-3.5 rounded-xl flex items-center gap-2 font-medium shadow-md hover:shadow-lg transition-all"
+          href={'/planner'}
+          >
             Start Planning Free <FaLongArrowAltRight />
-          </button>
+          </Link>
           <button className="bg-white w-full sm:w-48 py-3.5 rounded-xl font-medium border border-neutral-200 hover:bg-neutral-50 transition-all">
             See How it Works
           </button>

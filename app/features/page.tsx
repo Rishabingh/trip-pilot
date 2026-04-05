@@ -4,6 +4,7 @@ import FeatureDetailedCard from './components/FeatureDetailedCard'
 import LowerCallToActionSection from '@/components/LowerCallToActionSection'
 import { GiStarFormation } from "react-icons/gi";
 import { FaCalendarAlt } from "react-icons/fa";
+import { format } from 'path';
 
 const page = () => {
   return (
@@ -16,9 +17,9 @@ const page = () => {
           
           <FeatureDetailedCard
             className=''
-            logo={GiStarFormation}
-            title='AI-Powered Recommendations'
-            description='Our advanced AI analyzes millions of data points to suggest the perfect destinations, activities, and experiences tailored to your preferences.'
+            logo={"/planner-form.webp"}
+            title='Fill the form'
+            description='just start filling the form and then if you have some custom instructions then put them in custom instruction box and then just click the button to get your plan'
             l1='Personalized suggestions'
             l2='Smart budget allocation'
             l3='Time optimization'
@@ -26,23 +27,23 @@ const page = () => {
           
           <FeatureDetailedCard
             className='lg:flex-row-reverse' // Ensure this matches the lg breakpoint from the card!
-            logo={FaCalendarAlt}
-            title='Intelligent Scheduling'
-            description='Automatically organize your trip with optimal timing, considering opening hours, distances, and popular times to visit attractions.'
-            l1='Auto-scheduling'
+            logo={"/planner-md.webp"}
+            title='Easy to read format'
+            description='after clicking the button get your plan in easy to read format which is easier to understand and its step by step'
+            l1='plan based on real data'
             l2='Conflict detection'
-            l3='Real-time adjustments'
+            l3='suggestions and notes'
           />
           
           {/* I tweaked the title of the 3rd one slightly so it doesn't look like a duplicate of the 1st one! */}
           <FeatureDetailedCard
             className=''
-            logo={GiStarFormation}
-            title='Dynamic Adjustments'
-            description='Plans change, and so does your itinerary. Instantly adapt your schedule based on weather, mood, or unexpected closures.'
-            l1='Real-time weather tracking'
+            logo={"/planner-download.webp"}
+            title='Download button'
+            description='now you can download this md file locally in your device to keep it or make some adjustment or view it offline whenever you need'
+            l1='keep things offline for easy access'
             l2='Alternative suggestions'
-            l3='One-click reordering'
+            l3='standard md format'
           />
 
         </div>
